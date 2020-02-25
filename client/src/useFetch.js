@@ -1,14 +1,14 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 
-const useFetch = (api, options) => {
+const useFetch = (api) => {
     const [data, setData] = useState(null);
     useEffect(() => {
         axios
-            .get(api, options)
+            .get(api)
             .then(response => setData(response.data))
             .catch(err => console.log("Error: ", err))
-    })
+    }, [data])
 
     return data;
 }
