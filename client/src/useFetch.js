@@ -2,7 +2,7 @@ import axios from 'axios'
 import {useState, useEffect} from 'react'
 
 const useFetch = (api) => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
     useEffect(() => {
         axios
             .get(api)
