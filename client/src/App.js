@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Player from './Player'
 import Country from './Country'
+import {Card} from 'semantic-ui-react';
+
 
 const api = "http://localhost:5000/api/players";
 
@@ -34,6 +36,7 @@ class App extends Component{
       <div>
         <header>
           <h1>Country Results</h1>
+          <Card.Group>
           {this.state.countries.map(country =>(
             <Country key={country.id}
                 name={country.country}
@@ -49,11 +52,12 @@ class App extends Component{
                 />
 
           ))}
+          </Card.Group>
           <h1>World Cup Players</h1>
         </header>
         <main>
           {/*<CountryTable />*/}
-
+          <Card.Group>>  
           {this.state.players.map(player => (
             <Player
              key={player.id}
@@ -61,6 +65,7 @@ class App extends Component{
              country={player.country}
              searches={player.searches} />
           ))}
+          </Card.Group>
         </main>
         <footer>
           <div>copyright &copy;2020. All Rights Reserved</div>

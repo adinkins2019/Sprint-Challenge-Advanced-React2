@@ -1,12 +1,15 @@
 import React from 'react'
+import {Card} from 'semantic-ui-react'
 
 const Player = ({name, country, searches}) => {
     return(
-        <div>
-            <h2>{name}</h2>
-            <p>{country}</p>
-            <p>{searches}</p>
-        </div>
+        <Card>
+            <Card.Content>
+                <Card.Header>{name}</Card.Header>
+                <Card.Meta>{country}</Card.Meta>
+                <Card.Description>Searches: {searches}</Card.Description>
+            </Card.Content>
+        </Card>
     )
 }
 
